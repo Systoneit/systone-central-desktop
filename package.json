@@ -35,7 +35,10 @@
       "icon": "build/icon.icns",
       "target": [
         {
-          "target": "pkg",
+          "target": [
+            "dmg",
+            "zip"
+          ],
           "arch": [
             "x64",
             "arm64"
