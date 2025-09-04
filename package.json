@@ -7,9 +7,9 @@
     "dev": "tsc -w",
     "start": "electron .",
     "build": "tsc",
-    "dist:win": "npm run build &&  electron-builder --win",
-    "dist:mac": "npm run build &&  electron-builder --mac",
-    "dist:all": "npm run build &&  electron-builder -mwl"
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:mac": "npm run build && electron-builder --mac",
+    "dist:all": "npm run build && electron-builder -mwl"
   },
   "build": {
     "appId": "com.systone.central",
@@ -34,27 +34,21 @@
     "mac": {
       "icon": "build/icon.icns",
       "target": [
-        {
-          "target": [
-            "dmg",
-            "zip"
-          ],
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        }
+        "dmg",
+        "zip"
+      ],
+      "arch": [
+        "x64",
+        "arm64"
       ]
     },
     "win": {
       "icon": "build/icon.png",
       "target": [
-        {
-          "target": "msi",
-          "arch": [
-            "x64"
-          ]
-        }
+        "nsis"
+      ],
+      "arch": [
+        "x64"
       ]
     }
   },
