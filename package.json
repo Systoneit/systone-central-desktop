@@ -35,7 +35,7 @@
       "icon": "build/icon.icns",
       "target": [
         {
-          "target": "zip",
+          "target": "pkg",
           "arch": [
             "x64",
             "arm64"
@@ -46,7 +46,12 @@
     "win": {
       "icon": "build/icon.png",
       "target": [
-        "nsis"
+        {
+          "target": "msi",
+          "arch": [
+            "x64"
+          ]
+        }
       ]
     }
   },
