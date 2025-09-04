@@ -36,19 +36,12 @@
       "target": [
         "dmg",
         "zip"
-      ],
-      "arch": [
-        "x64",
-        "arm64"
       ]
     },
     "win": {
       "icon": "build/icon.png",
       "target": [
         "nsis"
-      ],
-      "arch": [
-        "x64"
       ]
     }
   },
