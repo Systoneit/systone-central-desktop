@@ -21,6 +21,7 @@
       "dist/**/*",
       "package.json",
       "!**/node_modules/*/{test,__tests__}/**",
+      "!**/chrome_crashpad_handler*",
       "!**/*.map",
       "!**/*.md",
       "!**/demo{,s}/**",
