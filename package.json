@@ -1,23 +1,49 @@
 {
-  "name": "systone-central-desktop",
+  "name": "systone-central",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Systone Central Desktop Wrapper",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc -w",
+    "start": "electron .",
+    "build": "tsc",
+    "dist:win": "npm run build &&  electron-builder --win",
+    "dist:mac": "npm run build &&  electron-builder --mac",
+    "dist:all": "npm run build &&  electron-builder -mwl"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Systoneit/systone-central-desktop.git"
+  "build": {
+    "appId": "com.systone.central",
+    "productName": "Systone Central",
+    "directories": {
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json",
+      "!**/node_modules/*/{test,__tests__}/**",
+      "!**/*.map",
+      "!**/*.md",
+      "!**/demo{,s}/**",
+      "!**/example{,s}/**",
+      "!**/docs/**",
+      "!**/*.ts",
+      "!src/**"
+    ],
+    "asar": true,
+    "compression": "maximum",
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": [
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "nsis"
+      ]
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Systoneit/systone-central-desktop/issues"
-  },
-  "homepage": "https://github.com/Systoneit/systone-central-desktop#readme",
   "devDependencies": {
     "@types/node": "^24.3.1",
     "electron": "^38.0.0",
