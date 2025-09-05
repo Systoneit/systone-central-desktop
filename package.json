@@ -37,8 +37,7 @@
     "mac": {
       "icon": "build/icon.icns",
       "target": [
-        "dmg",
-        "zip"
+        "dmg"
       ]
     },
     "win": {
